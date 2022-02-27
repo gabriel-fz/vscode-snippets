@@ -17,7 +17,9 @@ Abra o vscode e vá em `File > Preferences > User Snippets`. Com isso, será abe
 
 #### :arrow_right: CSS
 
-Contém snippets para a criação de funções e alguns atalhos de css.
+Contém snippets para a criação de
+- funções
+- atalhos de css.
 
 #### :arrow_right: Typescript
 
