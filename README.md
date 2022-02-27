@@ -9,9 +9,9 @@ Abra o vscode e vá em `File > Preferences > User Snippets`. Com isso, será abe
 
 ## :link: Tipos de snippets:
 
-- (css.json)[./css.json]
-- (typescript.json)[./typescript.json]
-- (typescriptreact.json)[./typescriptreact.json]
+- [css.json](./css.json)
+- [typescript.json](./typescript.json)
+- [typescriptreact.json](./typescriptreact.json)
 
 ## :memo: Sobre:
 
