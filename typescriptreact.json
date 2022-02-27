@@ -1,0 +1,268 @@
+{
+  "create console.log": {
+		"prefix": "console.log()",
+		"body": [
+			"console.log(${1})"
+		],
+		"description": "print console.log();"
+	},
+
+	"create console.log - text": {
+		"prefix": "console.log('')",
+		"body": [
+			"console.log('${1}')"
+		],
+		"description": "print console.log('');"
+	},
+
+  "create enum": {
+		"prefix": ["enum", "$enum"],
+		"body": [
+			"enum ${1/(.*)/${1:/capitalize}/}Enum {",
+			"  EXAMPLE = 'example',",
+			"}",
+			""
+		],
+		"description": "print enum"
+	},
+
+  // typescript
+
+  "create interface": {
+		"prefix": ["interface", "$interface"],
+		"body": [
+			"interface ${1/(.*)/${1:/capitalize}/}Props {",
+			"\t${2}",
+			"}"
+		],
+		"description": "print interface"
+	},
+
+	"create type = object": {
+		"prefix": ["type = {}", "$type = {}"],
+		"body": [
+			"type ${1/(.*)/${1:/capitalize}/}Type = {",
+			"\t${2}",
+			"}"
+		],
+		"description": "print type = {}"
+	},
+
+	"create type = strings": {
+		"prefix": ["type = ?", "$type = ?"],
+		"body": [
+			"type ${1/(.*)/${1:/capitalize}/}Type = ${2}"
+		],
+		"description": "print type = ''"
+	},
+
+  // React hooks
+
+	"create useEffect": {
+			"prefix": ["$useEffect", "useEffect(()=>{}, [])"],
+			"body": [
+				"useEffect(() => {",
+				"\t$1",
+				"}, []);"
+			],
+			"description": "print useEffect"
+	},
+
+	"create useCallback": {
+		"prefix": ["$useCallback", "useCallback(()=>{}, [])"],
+		"body": [
+			"useCallback(() => {",
+			"\t$1",
+			"}, []);"
+		],
+		"description": "print useCallback"
+	},
+
+	"create useState": {
+		"prefix": ["useState", "$useState"],
+		"body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"
+    ],
+		"description": "print useState"
+	},
+
+	"create useState - typed": {
+		"prefix": ["useState<>", "$useState<>"],
+		"body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<$2>($3);"
+    ],
+		"description": "print useState"
+	},
+
+	"create useState - boolean": {
+		"prefix": ["useState<boolean>", "$useState<boolean>"],
+		"body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<boolean>($2);"
+    ],
+		"description": "print useState"
+	},
+
+	// next
+
+	"create next component": {
+		"prefix": "nx-cp",
+		"body": [
+			"// import { Container } from './styles';",
+			"",
+			"export function ${1/(.*)/${1:/capitalize}/}() {",
+			"  return <div />;",
+			"}",
+			""
+		],
+		"description": "print next component"
+	},
+
+	"create next component with children": {
+		"prefix": "nx-cp-with-children",
+		"body": [
+			"import { ReactElement } from 'react';",
+			"",
+			"// import { Container } from './styles';",
+			"",
+			"interface ${1/(.*)/${1:/capitalize}/}Props {",
+			"  children: ReactElement;",
+			"}",
+			"",
+			"export function ${1/(.*)/${1:/capitalize}/}({ children }: ${1/(.*)/${1:/capitalize}/}Props) {",
+			"  return <div>{children}</div>;",
+			"}",
+			""
+		],
+		"description": "print next component with children"
+	},
+
+	"create next page - static": {
+		"prefix": "nx-fp-static",
+		"body": [
+			"import Head from '@components/Head';",
+			"",
+			"// import {  } from '@page-styles/';",
+			"",
+			"export default function Page() {",
+			"  return (",
+			"    <>",
+			"      <Head />",
+			"",
+			"      <div />",
+			"    </>",
+			"  );",
+			"}",
+			""
+		],
+		"description": "print funtion page static"
+	},
+
+	"create next page - SSR": {
+		"prefix": "nx-fp-ssr",
+		"body": [
+			"import { GetServerSideProps } from 'next';",
+			"",
+			"import Head from '@components/Head';",
+			"",
+			"// import {  } from '@page-styles/';",
+			"",
+			"export default function Page() {",
+			"  return (",
+			"    <>",
+			"      <Head />",
+			"",
+			"      <div />",
+			"    </>",
+			"  );",
+			"}",
+			"",
+			"export const getServerSideProps: GetServerSideProps = async () => {",
+			"  return {",
+			"    props: {},",
+			"  };",
+			"};",
+			""
+		],
+		"description": "print funtion page SSR"
+	},
+
+	"create next page - SSG": {
+		"prefix": "nx-fp-ssg",
+		"body": [
+			"import { GetStaticProps } from 'next';",
+			"",
+			"import Head from '@components/Head';",
+			"",
+			"// import {  } from '@page-styles/';",
+			"",
+			"export default function Page() {",
+			"  return (",
+			"    <>",
+			"      <Head />",
+			"",
+			"      <div />",
+			"    </>",
+			"  );",
+			"}",
+			"",
+			"export const getStaticProps: GetStaticProps = async () => {",
+			"  return {",
+			"    props: {},",
+			"  };",
+			"};",
+			""
+		],
+		"description": "print funtion page SSG"
+	},
+
+	"create getStaticPaths": {
+		"prefix": "getStaticPaths",
+		"body": [
+			"getStaticPaths: GetStaticPaths = async () => {",
+			"  return {",
+			"    paths: [],",
+			"    fallback: false,",
+			"  };",
+			"};",
+			""
+		],
+		"description": "print getStaticPaths"
+	},
+
+	"create getStaticProps": {
+		"prefix": "getStaticProps",
+		"body": [
+			"getStaticProps: GetStaticProps = async () => {",
+			"  return {",
+			"    props: {},",
+			"  };",
+			"};",
+			""
+		],
+		"description": "print getStaticProps"
+	},
+
+	"create getServerSideProps": {
+		"prefix": "getServerSideProps",
+		"body": [
+			"getServerSideProps: GetServerSideProps = async () => {",
+			"  return {",
+			"    props: {},",
+			"  };",
+			"};",
+			""
+		],
+		"description": "print getServerSideProps"
+	},
+
+	"create getLayout": {
+		"prefix": "getLayout",
+		"body": [
+			"getLayout = function getLayout(page: React.ReactElement) {",
+			"  return <${1}>{page}</${1}>;",
+			"};",
+			""
+		],
+		"description": "print getLayout"
+	}
+}

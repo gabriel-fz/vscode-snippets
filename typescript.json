@@ -1,0 +1,102 @@
+{
+  "create enum template": {
+		"prefix": ["enum", "$enum "],
+		"body": [
+			"enum ${1/(.*)/${1:/capitalize}/}Enum {",
+			"  EXAMPLE = 'example',",
+			"}",
+			""
+		],
+		"description": "print enum"
+	},
+
+	"create enum template + export": {
+		"prefix": ["enum-export", "$enum-export"],
+		"body": [
+			"enum ${1/(.*)/${1:/capitalize}/}Enum {",
+			"  EXAMPLE = 'example',",
+			"}",
+			"",
+			"export default ${1/(.*)/${1:/capitalize}/}Enum;",
+			""
+		],
+		"description": "print enum + export"
+	},
+
+  // typescript
+
+  "create interface": {
+		"prefix": ["interface", "$interface"],
+		"body": [
+			"interface ${1/(.*)/${1:/capitalize}/}Props {",
+			"\t${2}",
+			"}"
+		],
+		"description": "print interface"
+	},
+
+	"create type = object": {
+		"prefix": ["type = {}", "$type = {}"],
+		"body": [
+			"type ${1/(.*)/${1:/capitalize}/}Type = {",
+			"\t${2}",
+			"}"
+		],
+		"description": "print type = {}"
+	},
+
+	"create type = strings": {
+		"prefix": ["type = ?", "$type = ?"],
+		"body": [
+			"type ${1/(.*)/${1:/capitalize}/}Type = ${2}"
+		],
+		"description": "print type = ''"
+	}, 
+
+  // Styled components
+
+	"create custom styled component": {
+		"prefix": "exc()",
+		"body": [
+			"export const $1 = styled($2)`",
+			"\t$3",
+			"`;"
+		],
+		"description": "Creat custom component in styled-components"
+	},
+
+	"create styled component div": {
+		"prefix": "exc.div",
+		"body": [
+			"export const $1 = styled.div`",
+			"\t$2",
+			"`;"
+		],
+		"description": "Creat div in styled-components"
+	},
+
+	"create styled component button": {
+		"prefix": "exc.button",
+		"body": [
+			"export const $1 = styled.button`",
+			"\t$2",
+			"`;"
+		],
+		"description": "Creat button in styled-components"
+	},
+
+  // next - server
+
+	"create next route api": {
+		"prefix": "nx-api",
+		"body": [
+			"import { NextApiRequest, NextApiResponse } from 'next';",
+			"",
+			"export default async (request: NextApiRequest, response: NextApiResponse) => {",
+			"  return response.status(201).json({ ok: true });",
+			"};",
+			""
+		],
+		"description": "print simple api"
+	}
+}
