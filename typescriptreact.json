@@ -102,6 +102,41 @@
 		"description": "print useState"
 	},
 
+	// React components
+
+	"create forwardRefRenderFunction component": {
+		"prefix": "rfowardc",
+		"body": [
+			"import React, { forwardRef, useImperativeHandle } from 'react';",
+			"",
+			"// import { Container } from './styles';",
+			"",
+			"interface ${1/(.*)/${1:/capitalize}/}Props {",
+			"  children: React.ReactNode;",
+			"  className?: string;",
+			"}",
+			"",
+			"export interface ${1/(.*)/${1:/capitalize}/}Handles {",
+			"  //",
+			"}",
+			"",
+			"const ${1/(.*)/${1:/capitalize}/}: React.ForwardRefRenderFunction<",
+			"  ${1/(.*)/${1:/capitalize}/}Handles,",
+			"  ${1/(.*)/${1:/capitalize}/}Props",
+			"> = ({ className = '', children }, ref) => {",
+			"  useImperativeHandle(ref, () => {",
+			"    return {};",
+			"  });",
+			"",
+			"  return <div />;",
+			"};",
+			"",
+			"export default forwardRef(${1/(.*)/${1:/capitalize}/});",
+			""
+		],
+		"description": "print forwardRefRenderFunction component"
+	},
+
 	// next
 
 	"create next component": {
