@@ -1,0 +1,99 @@
+{
+  "create flex-center": {
+		"prefix": "$flex-center",
+		"body": [
+			"display: flex;",
+			"justify-content: center;",
+			"align-items: center;"
+		],
+		"description": "print flex-center"
+	},
+
+	"create width 100%": {
+		"prefix": "width100%",
+		"body": [
+			"width: 100%;"
+		],
+		"description": "print width = 100%"
+	},
+
+	"create width 100vw": {
+		"prefix": "width100vw",
+		"body": [
+			"width: 100vw;"
+		],
+		"description": "print width = 100vw"
+	},
+
+	"create height 100%": {
+		"prefix": "height100%",
+		"body": [
+			"height: 100%;"
+		],
+		"description": "print height = 100%"
+	},
+
+	"create height 100vh": {
+		"prefix": "height100vh",
+		"body": [
+			"height: 100vh;"
+		],
+		"description": "print height = 100vh"
+	},
+
+  "create &+div": {
+		"prefix": "&+div",
+		"body": [
+			"& + div {",
+			"\t$1",
+			"}"
+		],
+		"description": "print &+div"
+	},
+
+	"create &+button": {
+		"prefix": "&+button",
+		"body": [
+			"& + button {",
+			"\t$1",
+			"}"
+		],
+		"description": "print &+button"
+	},
+
+  "create &+tag": {
+		"prefix": "&+tag",
+		"body": [
+			"& + $1 {",
+			"\t$2",
+			"}"
+		],
+		"description": "print &+tag"
+	},
+
+  // functions
+
+  "create function": {
+		"prefix": "$function",
+		"body": [
+			"${({ $1 }) => $2};"
+		],
+		"description": "print function"
+	},
+
+	"create theme provider - colors": {
+		"prefix": "$theme-colors",
+		"body": [
+			"${({ theme }) => theme.colors.$1};"
+		],
+		"description": "print function theme-colors"
+	},
+
+	"create theme provider - breakpoints": {
+		"prefix": "$theme-breakpoints",
+		"body": [
+			"${({ theme }) => theme.breakpoints.$1};"
+		],
+		"description": "print function theme-breakpoints"
+	}
+}
