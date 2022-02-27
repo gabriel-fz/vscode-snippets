@@ -1,21 +1,25 @@
-# Snippets pessoais para vscode
+<h1 align="center">
+  Snippets pessoais para vscode
+</h1>
 
-**Como utilizar:**
+## :rocket: Como utilizar:
 
 Abra o vscode e vá em `File > Preferences > User Snippets`. Com isso, será aberta uma caixa de diálogo onde basta procurar o arquivo correspondente ao arquivos `.json` deste proveto.
 
 
-**Tipos de snippets:**
+## :link: Tipos de snippets:
 
-- (css.json)[#rocket-css]
-- (typescript.json)[#rocket-typescript]
-- (typescriptreact.json)[#rocket-typescriptreact]
+- (css.json)[https://github.com/gabriel-fz/vscode-snippets/blob/main/css.json]
+- (typescript.json)[https://github.com/gabriel-fz/vscode-snippets/blob/main/typescript.json]
+- (typescriptreact.json)[https://github.com/gabriel-fz/vscode-snippets/blob/main/typescriptreact.json]
 
-### :rocket: CSS
+## :memo: Sobre:
+
+### CSS
 
 Contém snippets para a criação de funções e alguns atalhos de css.
 
-### :rocket: Typescript
+### Typescript
 
 Contém snippets para a criação de:
 
@@ -25,7 +29,7 @@ Contém snippets para a criação de:
 - componentes da biblioteca styled-components
 - funções usadas na api do next
 
-### :rocket: Typescript
+### Typescript
 
 Contém snippets para a criação de:
 
